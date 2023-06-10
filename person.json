@@ -1,0 +1,18 @@
+// PERSON.JASON(SIMILE ALL'OGGETTO JAVASRIPT)
+//SERVE PER FARE ESEMPI, E PER TRASFERIRE LISTA OGGETTI SU JAVASCRIPT
+
+{
+    "nome": "Mirko",
+    "cognome": "Abbrescia",
+    "età": 37,
+    "contatti": [
+        "33333333",
+        "33333344"
+    ],
+    "indirizzo":{
+        "citta": "bari",
+        "indirizzo": "via",
+        "CAP": "70100"
+    },
+    "sposato": false
+}

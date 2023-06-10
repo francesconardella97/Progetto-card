@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto+Mono:ital,wght@1,500&family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  
+  <body>
+    <!-- //NAVBAR -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Rubrica</a>
+      </div>
+    </nav>
+    <!-- //COMANDI-------------------------------------------------------->
+    <section class="container-fluid">
+      <div class="row">
+        <div class="col-12 col-sm-2">
+          <div class="btn-group-vertical" role="group" aria-label="Vertical button group">
+            <button id="viewButton" type="button" class="btn btn-primary">Visualizza contatti</button>
+            <button id="insertButton" type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#insertContact">inserisci</button>
+            <button id="updateButton" type="button" class="btn btn-warning"  data-bs-toggle="modal" data-bs-target="#updateContact">Modifica</button>
+            <button id="deleteButton" type="button" class="btn btn-danger">Elimina</button>
+          </div>
+        </div>
+    <!-- //CONTATTI------------------------------------------------------------->
+        <div class="col-12 col-sm-10">
+          <h2>Contatti</h2>
+          <div class="mb-3 row">
+            <label for="inputEmail" class="col-sm-1 col-form-label"><i class="fa-solid fa-magnifying-glass"></i></label>
+            <div class="col-sm-11">
+              <input type="text" class="form-control" id="searchNome" placeholder="">
+            </div>
+          </div>
+          <div id="contactsWrapper" class="contacts">
+            <div id="contactElements" class="card card-selected card-layout px-3 py-4 justify-content-center shadow m-2">
+              <div class="avatar">
+                <img src="https://picsum.photos/60" alt="">
+              </div>
+              <div class="contact-info d-flex flex-column justify-content-around text-white">
+                <span>Francesco Nardella</span>
+                <div class="d-flex flex-column">
+                  <span class="caption fw-bolder">Telefono :</span>
+                  <span class="ms-auto">323546373</span>
+                </div>
+                <div class="d-flex flex-column">
+                  <span class="caption fw-bolder">Email :</span>
+                  <span class="ms-auto">email@gmail.it</span>
+                </div>
+               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- MODAL-1-------------------------------------------------------------->
+    <div class="modal fade" id="insertContact" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Nuovo Contatto</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+                <div class="modal-body">
+                  <div class="mb-3 row">
+                    <label for="inputNome" class="col-sm-2 col-form-label">Nome e Cognome</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="inputNome">
+                    </div>
+                  </div>
+                  <div class="mb-3 row">
+                    <label for="inputTelefono" class="col-sm-2 col-form-label">Telefono</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="inputTelefono" placeholder="xxx-xxxxxx">
+                    </div>
+                  </div>
+                  <div class="mb-3 row">
+                    <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="inputEmail" placeholder="xxx@example.com">
+                    </div>
+                  </div>
+                </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Annulla</button>
+                <button id="modalInsertContact" type="button" class="btn btn-success"  data-bs-dismiss="modal">Conferma</button>
+              </div>
+            </div>
+          </div>
+        </div>
+    <!-- MODAL-2 -->
+    <div class="modal fade" id="updateContact" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Modifica Contatto</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+                <div class="modal-body">
+                  <div class="mb-3 row">
+                    <label for="inputNome" class="col-sm-2 col-form-label">Nome e Cognome</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="updateNome">
+                    </div>
+                  </div>
+                  <div class="mb-3 row">
+                    <label for="inputTelefono" class="col-sm-2 col-form-label">Telefono</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="updateTelefono" placeholder="xxx-xxxxxx">
+                    </div>
+                  </div>
+                  <div class="mb-3 row">
+                    <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="updateEmail" placeholder="xxx@example.com">
+                    </div>
+                  </div>
+                </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Annulla</button>
+                <button id="modalUpdateContact" type="button" class="btn btn-success"  data-bs-dismiss="modal">Conferma</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+      <script src="script.js"></script>
+      <script src="script2.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    </body>
+  </html>

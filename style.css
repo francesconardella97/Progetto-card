@@ -1,0 +1,47 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Montserrat', sans-serif;}
+
+    .contacts {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .card-layout {
+        height: 300px;
+        width: 200px;
+        background: #337ee6;
+        background: linear-gradient(to right, #19598a 0%, #0e8067 63%, #3c2f9f 100%);
+        transition: transform linear 100ms;
+    }
+
+    .card-layout:hover {
+        transform: scale(1.05);
+    }
+
+    .card-selected {
+        border: solid 3px rgb(255, 47, 113);
+    }
+
+    .avatar {
+        margin: auto;
+        border-radius: 25px;
+        overflow: hidden;        
+    }
+
+    .contact-info {
+        flex-basis: 70%;
+    }
+
+    .caption {
+        font-size: 10px;
+    }
+
+    .contact-info {
+        padding: 5px 5px;
+        background-color: rgba(0, 0, 0, 0.3);
+        border-radius: 6px;
+    }
